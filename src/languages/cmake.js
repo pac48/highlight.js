@@ -8,6 +8,14 @@ Category: build-system
 
 /** @type LanguageFn */
 export default function(hljs) {
+	const RESERVED = {
+		  className: 'reserved',
+		  begin: "TARGETS|LIBRARY|DIRECTORY|PUBLIC|PRIVATE|VERSION"
+	};
+	const NUMBER = {
+		  className: 'number',
+		  begin: "[0-9\.][0-9]",
+	};
   return {
     name: 'CMake',
     aliases: [ 'cmake.in' ],
@@ -53,6 +61,8 @@ export default function(hljs) {
         begin: /\$\{/,
         end: /\}/
       },
+			NUMBER,
+			RESERVED,
       hljs.COMMENT(/#\[\[/, /]]/),
       hljs.HASH_COMMENT_MODE,
       hljs.QUOTE_STRING_MODE,
