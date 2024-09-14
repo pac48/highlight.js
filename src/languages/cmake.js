@@ -14,7 +14,7 @@ export default function(hljs) {
 	};
 	const NUMBER = {
 		  className: 'number',
-		  begin: "[0-9\.][0-9]",
+		  begin: "[{v}0-9\.][0-9]",
 	};
   return {
     name: 'CMake',
