@@ -22,7 +22,7 @@ export default function(hljs) {
     case_insensitive: false,
     keywords: { keyword:
         // scripting commands
-        'break cmake_host_system_information cmake_minimum_required cmake_parse_arguments '
+        'generate_fast_forward_kinematics_library break cmake_host_system_information cmake_minimum_required cmake_parse_arguments '
         + 'cmake_policy configure_file continue elseif else endforeach endfunction endif endmacro '
         + 'endwhile execute_process file find_file find_library find_package find_path '
         + 'find_program foreach function get_cmake_property get_directory_property '
