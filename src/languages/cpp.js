@@ -20,10 +20,6 @@ export default function(hljs) {
     + '[a-zA-Z_]\\w*' + regex.optional(TEMPLATE_ARGUMENT_RE)
   + ')';
 
-  const CPP_PRIMITIVE_TYPES = {
-    className: 'type',
-    begin: '\\b[a-z\\d_]*_t\\b'
-  };
 
   // https://en.cppreference.com/w/cpp/language/escape
   // \\ \x \xFF \u2837 \u00323747 \374
@@ -435,7 +431,6 @@ export default function(hljs) {
   const EXPRESSION_CONTAINS = [
     FUNCTION_DISPATCH,
     PREPROCESSOR,
-    CPP_PRIMITIVE_TYPES,
     C_LINE_COMMENT_MODE,
     hljs.C_BLOCK_COMMENT_MODE,
     NUMBERS,
@@ -525,7 +520,6 @@ export default function(hljs) {
           hljs.C_BLOCK_COMMENT_MODE,
           STRINGS,
           NUMBERS,
-          CPP_PRIMITIVE_TYPES,
           // Count matching parentheses.
           {
             begin: /\(/,
@@ -538,12 +532,10 @@ export default function(hljs) {
               hljs.C_BLOCK_COMMENT_MODE,
               STRINGS,
               NUMBERS,
-              CPP_PRIMITIVE_TYPES
             ]
           }
         ]
       },
-      CPP_PRIMITIVE_TYPES,
       C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE,
       PREPROCESSOR
@@ -576,8 +568,7 @@ export default function(hljs) {
           end: '>',
           keywords: CPP_KEYWORDS,
           contains: [
-            'self',
-            CPP_PRIMITIVE_TYPES
+            'self'
           ]
         },
         {
